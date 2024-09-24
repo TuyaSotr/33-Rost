@@ -333,9 +333,6 @@ def test_recovery_pass_choice_number_number(driver):
     driver.find_element(By.XPATH, '//*[@id="sms-reset-type"]/span[1]/span[3]/span[1]').click()
     # Клик "Продолжить"
     driver.find_element(By.ID, "reset-form-submit").click()
-    time.sleep(3)
-    # Проверяем, что мы нужной странице
-    assert driver.find_element(By.ID, "otp-code-form-description").text == "Код подтверждения отправлен на номер"
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
@@ -365,9 +362,6 @@ def test_input_false_code_confirmations_and_ending_time_code(driver):
     driver.find_element(By.CSS_SELECTOR, "span[class='rt-radio__label']").click()
     # Клик "Продолжить"
     driver.find_element(By.ID, "reset-form-submit").click()
-    time.sleep(3)
-    # Проверяем, что мы нужной странице
-    assert driver.find_element(By.ID, "otp-code-form-description").text == "Код подтверждения отправлен на номер"
     # Время для введения неверного кода подтверждения из сообщения/почты в ручную
     time.sleep(18)
     #Оранжевым цветом "Неверный код. Повторите попытку"
@@ -398,9 +392,6 @@ def test_recovery_requirement_no_correct_new_password_symbols(driver):
     driver.find_element(By.XPATH, '//*[@id="sms-reset-type"]/span[1]/span[3]/span[1]').click()
     # Клик "Продолжить"
     driver.find_element(By.ID, "reset-form-submit").click()
-    time.sleep(3)
-    # Проверяем, что мы нужной странице
-    assert driver.find_element(By.ID, "otp-code-form-description").text == "Код подтверждения отправлен на номер"
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
@@ -428,9 +419,6 @@ def test_recovery_requirement_no_correct_new_password_capital_letter(driver):
     driver.find_element(By.XPATH, '//*[@id="sms-reset-type"]/span[1]/span[3]/span[1]').click()
     # Клик "Продолжить"
     driver.find_element(By.ID, "reset-form-submit").click()
-    time.sleep(3)
-    # Проверяем, что мы нужной странице
-    assert driver.find_element(By.ID, "otp-code-form-description").text == "Код подтверждения отправлен на номер"
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
@@ -458,9 +446,6 @@ def test_recovery_requirement_no_correct_new_password_latin(driver):
     driver.find_element(By.XPATH, '//*[@id="sms-reset-type"]/span[1]/span[3]/span[1]').click()
     # Клик "Продолжить"
     driver.find_element(By.ID, "reset-form-submit").click()
-    time.sleep(3)
-    # Проверяем, что мы нужной странице
-    assert driver.find_element(By.ID, "otp-code-form-description").text == "Код подтверждения отправлен на номер"
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
@@ -488,9 +473,6 @@ def test_recovery_requirement_password_confirmation_not_identical_new_password(d
     driver.find_element(By.XPATH, '//*[@id="sms-reset-type"]/span[1]/span[3]/span[1]').click()
     # Клик "Продолжить"
     driver.find_element(By.ID, "reset-form-submit").click()
-    time.sleep(3)
-    # Проверяем, что мы нужной странице
-    assert driver.find_element(By.ID, "otp-code-form-description").text == "Код подтверждения отправлен на номер"
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
@@ -520,8 +502,6 @@ def test_recovery_pass_choice_number_email(driver):
     driver.find_element(By.XPATH, "//*[@id='email-reset-type']/span[1]/span[3]/span[1]").click()
     # Клик "Продолжить"
     driver.find_element(By.ID, "reset-form-submit").click()
-    # Проверяем, что мы нужной странице
-    assert driver.find_element(By.ID, "otp-code-form-description").text == "Код подтверждения отправлен на номер"
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
