@@ -25,6 +25,7 @@ def test_auth_code_number(code):
     # Если есть Капча - Нужно ввести в ручную
     time.sleep(20)
     code.find_element(By.ID, "otp_get_code").click()
+    time.sleep(7)
     assert code.find_element(By.ID, "card-title").text == 'Код подтверждения отправлен'
     # Для ввода кода подтверждения из сообщения
     time.sleep(20)
