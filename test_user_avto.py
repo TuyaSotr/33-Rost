@@ -422,7 +422,7 @@ def test_recovery_requirement_no_correct_new_password_capital_letter(driver):
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
-    # Ввести поле "Пароль" новый пароль с длиной меньше 8 знаков
+    # Ввести поле "Пароль" новый пароль без заглавных букв латиницей
     driver.find_element(By.ID, "password-new").send_keys('qwerty1234')
     driver.find_element(By.ID, "card-title").click()
     assert driver.find_element(By.XPATH, '//*[@id="password-new-meta"]').text == "Пароль должен содержать хотя бы одну заглавную букву"
@@ -449,7 +449,7 @@ def test_recovery_requirement_no_correct_new_password_latin(driver):
     # Время для введения кода подтверждения из сообщения/почты
     time.sleep(20)
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
-    # Ввести поле "Пароль" новый пароль с длиной меньше 8 знаков
+    # Ввести поле "Пароль" новый пароль кириллицей
     driver.find_element(By.ID, "password-new").send_keys('Пароль222')
     driver.find_element(By.ID, "card-title").click()
     assert driver.find_element(By.XPATH,'//*[@id="password-new-meta"]').text == "Пароль должен содержать только латинские буквы"
@@ -478,7 +478,7 @@ def test_recovery_requirement_password_confirmation_not_identical_new_password(d
     assert driver.find_element(By.ID, "card-title").text == "Восстановление пароля"
     # Ввести поле "Пароль" новый пароль с латинским заглавным буквой от 8 до 20 знаков
     driver.find_element(By.ID, "password-new").send_keys('Qwerty1234')
-    # Повторить введенный пароль "Пароль" на поле "Подтверждение пароля"
+    # Неверный пароль на поле "Подтверждение пароля"
     driver.find_element(By.ID, "password-confirm").send_keys('Qwerty129')
     driver.find_element(By.ID, "t-btn-reset-pass").click()
     assert driver.find_element(By.XPATH, '//*[@id="password-confirm-meta"]').text == "Пароли не совпадают"
