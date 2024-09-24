@@ -9,7 +9,7 @@
 2)Тест дизайн-техника пограничные границы полей.
 Для работы тестов необходимы:
 1)PyCharm - https://www.jetbrains.com/pycharm/download/?section=windows .
-2)ChromeDriver (вашй версии Chrome) - https://developer.chrome.com/docs/chromedriver/downloads?hl=ru .
+2)ChromeDriver (ваша версии Chrome) - https://developer.chrome.com/docs/chromedriver/downloads?hl=ru .
 3)Библиотеки:
 a)pip install pytest (терминал PyCharm).
 b)pip install pytest-selenium  (терминал PyCharm).
